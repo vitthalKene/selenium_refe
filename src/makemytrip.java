@@ -1,22 +1,27 @@
-package Try_catch_pop_up;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class makemytrip {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver ();
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver(c);
 		
 		driver.get("https://www.makemytrip.com/");
-		
 		driver.manage().window().maximize();
+		//(//span[@class="nav-line-2"])[1]
 		
 		try
 		{

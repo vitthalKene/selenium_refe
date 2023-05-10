@@ -1,4 +1,4 @@
-package AutomateScreenShot;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -7,17 +7,23 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.google.common.io.Files;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Automate_Screenshot {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver ();
+		WebDriverManager.chromedriver().setup(); 
+		WebDriver driver=new ChromeDriver(c); 
 		
 		driver.get("https://www.imdb.com/");
 		

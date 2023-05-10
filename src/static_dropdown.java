@@ -1,19 +1,28 @@
-package static_dropdown;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class static_dropdown {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-        System.setProperty("webdriver.chrome.driver","D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver(c); 
 		
 		driver.get("https://www.amazon.in/");
 		
@@ -24,11 +33,11 @@ public class static_dropdown {
 		
 		Select s=new Select(dropdown);
 		
-		//s.selectByIndex(1);
-		//s.selectByVisibleText("Beauty");
-		s.selectByValue("search-alias=stripbooks");  
+		s.selectByIndex(1);
+		//s.selectByVisibleText("Appliances");
+		//s.selectByValue("search-alias=stripbooks");  
 		
-		driver.quit();
+	
 
 	}
 

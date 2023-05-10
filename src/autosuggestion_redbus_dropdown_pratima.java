@@ -1,4 +1,4 @@
-package AutoSuggestion_Dropdown;
+
 
 import java.util.List;
 import java.util.Scanner;
@@ -7,6 +7,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class autosuggestion_redbus_dropdown_pratima {
 
@@ -29,9 +32,11 @@ public class autosuggestion_redbus_dropdown_pratima {
 		
 		
 		//Set the system properties
-		System.setProperty("webdriver.chrome.driver","D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe" );
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver();  //create the object for browser
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver(c);  //create the object for browser
 		
 		driver.get("https://www.redbus.in/"); // launch the url
 		

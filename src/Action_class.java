@@ -1,19 +1,25 @@
-package mouse_keyboard;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Action_class {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
-		WebDriver driver=new ChromeDriver();
+		WebDriverManager.chromedriver().setup(); 
+		WebDriver driver=new ChromeDriver(c); 
 		
 		driver.get("https://www.amazon.in/");
 		

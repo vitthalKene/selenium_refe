@@ -1,17 +1,24 @@
-package By_Name;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class locator_firefox_fb {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-        System.setProperty("webdriver.chrome.driver","D:\\MSSquare Global\\geckodriver-v0.32.0-win32\\geckodriver.exe");
+
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver=new FirefoxDriver(); 
 		
-		WebDriver driver=new FirefoxDriver();
+		ChromeOptions c=new ChromeOptions();
+		c.addArguments("--remote-allow-origins=*");
 		
 		driver.get("https://www.facebook.com");
 		

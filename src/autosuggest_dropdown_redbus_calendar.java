@@ -1,28 +1,34 @@
-package AutoSuggestion_Dropdown;
 
+
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class autosuggest_dropdown_redbus_calendar {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
-        System.setProperty("webdriver.chrome.driver", "D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
-		
-		WebDriver driver=new ChromeDriver();
+        ChromeOptions c=new ChromeOptions();
+        c.addArguments("--remote-allow-origins=*");
+        
+        WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver(c);
 		
 		driver.get("https://www.redbus.com/");
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		
 		driver.findElement(By.xpath("//button[text()=\"Accept All\"]")).click();
 		driver.findElement(By.xpath("//input[@id=\"onward_cal\"]")).sendKeys("27");
-		Thread.sleep(5000);
+		
 
 		
 		//create the WebElement variable for text and click
