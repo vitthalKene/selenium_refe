@@ -39,7 +39,7 @@ public class Drag_Drop {
 		// drag and drop
 		Act.dragAndDrop(source, destination).build().perform();
 		
-		driver.switchTo().parentFrame();   //switch to parent
+		//driver.switchTo().parentFrame();   //switch to parent
 	
 
 	}

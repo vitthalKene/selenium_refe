@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class autosuggestion_redbus_dropdown_pratima {
+public class Calender_autosuggestion_redbus_dropdown_pratima {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub

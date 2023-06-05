@@ -26,10 +26,10 @@ public class Action_class {
 		driver.manage().window().maximize();
 		
 		//Creating the object for action class
-		Actions act=new Actions(driver);
+		//Actions act=new Actions(driver);
 		
 		//Mouse over
-		act.moveToElement(driver.findElement(By.xpath("//span[text()='Hello, sign in']"))).build().perform();
+	//	act.moveToElement(driver.findElement(By.xpath("//span[text()='Hello, sign in']"))).build().perform();
 		
 		//upper case into search box
 		//act.moveToElement(driver.findElement(By.xpath("//input[@id=\"twotabsearchtextbox\"]"))).click().keyDown(Keys.SHIFT).sendKeys("mobile").build().perform();

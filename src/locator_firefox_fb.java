@@ -13,20 +13,23 @@ public class locator_firefox_fb {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-
-		WebDriverManager.firefoxdriver().setup();
-		WebDriver driver=new FirefoxDriver(); 
-		
 		ChromeOptions c=new ChromeOptions();
 		c.addArguments("--remote-allow-origins=*");
 		
-		driver.get("https://www.facebook.com");
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver(c); 
+		
+		
+		
+		driver.get("https://www.amazon.com");
 		
 		driver.manage().window().maximize();
 		
-		driver.findElement(By.name("email")).sendKeys("11111");
-		driver.findElement(By.name("pass")).sendKeys("1111");
-		driver.findElement(By.name("login")).click();
+//		driver.findElement(By.name("email")).sendKeys("11111");
+//		driver.findElement(By.name("pass")).sendKeys("1111");
+//		driver.findElement(By.name("login")).click();
+		
+		driver.findElement(By.xpath("//select[contains(@class,\"nav-search-dropdown\")]"));
 	 
 		
 	}

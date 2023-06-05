@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class autosuggestive_dropdown_yahoo {
 
@@ -13,9 +14,9 @@ public class autosuggestive_dropdown_yahoo {
 		// TODO Auto-generated method stub
 		
 		//set the properties 
-		System.setProperty("webdriver.chrome.driver", "D:\\ScreenRecorder\\SQL & UNIX\\chromedriver_win32\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "D:\\MSSquare Global\\driver\\geckodriver-v0.33.0-win32\\geckodriver.exe");
 		
-		WebDriver driver=new ChromeDriver();  //Create the of object of Driver
+		WebDriver driver=new FirefoxDriver();  //Create the of object of Driver
 		
 		driver.get("https://in.search.yahoo.com/?fr2=inr"); //Launch the URL
 		
